@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巨人傑講座與對談完整逐字稿</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #374151;
+            --heading-color: #111827;
+            --bg-color: #f9fafb;
+            --content-bg: #ffffff;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            background-color: var(--content-bg);
+            border-right: 1px solid #e5e7eb;
+            padding: 2rem 1.5rem;
+            z-index: 100;
+        }
+
+        .sidebar h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .nav-list {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: block;
+            text-decoration: none;
+            color: #6b7280;
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .nav-sub {
+            margin-left: 1rem;
+            border-left: 2px solid #e5e7eb;
+            padding-left: 0.75rem;
+            margin-top: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .nav-sub .nav-link {
+            font-size: 0.85rem;
+            padding: 0.25rem 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 1000px;
+        }
+
+        .content-container {
+            background-color: var(--content-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1.doc-title {
+            font-size: 2.25rem;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f3f4f6;
+            padding-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            color: var(--heading-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            color: var(--heading-color);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            font-size: 1.15rem;
+            color: var(--heading-color);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #4b5563;
+            font-style: italic;
+            background: #eff6ff;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0.1em 0.3em;
+            border-radius: 0.2em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+                padding: 1rem;
+            }
+
+            .sidebar h1 {
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+            
+            .nav-list {
+                display: none; /* Collapsed by default on mobile, could assume users scroll */
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+
+            .content-container {
+                padding: 1.5rem;
+            }
+
+            h1.doc-title {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <h1>巨人傑講座與對談</h1>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#part1" class="nav-link">第一部分：上半場</a>
+                <ul class="nav-list nav-sub">
+                    <li><a href="#intro-1" class="nav-link">前言</a></li>
+                    <li><a href="#section-1" class="nav-link">一、交易可信度</a></li>
+                    <li><a href="#section-2" class="nav-link">二、與大戶的距離</a></li>
+                    <li><a href="#section-3" class="nav-link">三、策略怎麼找</a></li>
+                    <li><a href="#section-4" class="nav-link">四、交易本質：供需</a></li>
+                    <li><a href="#section-5" class="nav-link">五、短線與技術分析</a></li>
+                    <li><a href="#section-6" class="nav-link">六、心態與部位</a></li>
+                    <li><a href="#section-7" class="nav-link">七、小部位試錯</a></li>
+                    <li><a href="#section-8" class="nav-link">八、把小錢當錢</a></li>
+                    <li><a href="#section-9" class="nav-link">九、行情解讀偏誤</a></li>
+                    <li><a href="#section-10" class="nav-link">十、結尾：熱愛</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#part2" class="nav-link">第二部分：下半場</a>
+                <ul class="nav-list nav-sub">
+                    <li><a href="#intro-2" class="nav-link">前言</a></li>
+                    <li><a href="#part2-1" class="nav-link">一、台積電與持倉</a></li>
+                    <li><a href="#part2-2" class="nav-link">二、判斷與停損</a></li>
+                    <li><a href="#part2-3" class="nav-link">三、當沖價值</a></li>
+                    <li><a href="#part2-4" class="nav-link">四、極端行情應對</a></li>
+                    <li><a href="#part2-5" class="nav-link">五、市場流動性</a></li>
+                    <li><a href="#part2-6" class="nav-link">六、2026 產業觀點</a></li>
+                    <li><a href="#part2-7" class="nav-link">七、人生追求</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-container">
+            <h1 class="doc-title">巨人傑講座與對談完整逐字稿整理</h1>
+
+            <section id="part1">
+                <h2>第一部分：上半場 - 交易心法與策略邏輯</h2>
+
+                <div id="intro-1">
+                    <h3>前言</h3>
+                    <p>以下為今日講座上半場內容（以後留著也給自己看⋯）</p>
+                    <p>我今天分享的東西，有些是我新手時期「悟到」以後，才有辦法跨到下一個層級；有些是我 15 年交易一路走來反覆驗證、一直貫徹到現在的交易邏輯。它們聽起來可能只是簡單道理，但背後是我用 15 年、以及大量真實成交換來的體感。我要先講清楚：我的目的不是讓你今天聽完就立刻賺錢，或是覺得自己「都懂了」。我想做的是給你一個方向，讓你回去能用自己的經驗，把它內化成你自己的系統。</p>
+                </div>
+
+                <div id="section-1">
+                    <h3>一、先談「可信度」：看對帳單，比聽故事重要</h3>
+                    <p>我在新手階段也跟大家一樣，能報名的講座就去聽。講座費用其實是小事，但最怕的是：你聽到的是錯誤觀念，回市場一做，損失可能是幾十倍、幾百倍。</p>
+                    <p>所以我一直強調一件事：<strong>對帳單、真實成交紀錄很重要。</strong></p>
+                    <p>現在 FB、IG 很多投資網紅，你要先問自己：「他在市場上賺的是什麼？」你想在市場賺錢，但他可能是在賺你的錢。</p>
+                    <p>我對自己的要求是：只要我出來講，我就要敢把對帳單拿出來。這次主辦單位也有做核對，我近五年累積的成交紀錄、帳務資料都在。粗略算下來，五年累積成交量大概到「兆」這個等級。</p>
+                    <p>那有人會說：你成交那麼大，手續費跟交易稅成本不就很誇張？你做得起嗎？</p>
+                    <p>關鍵其實很簡單：<strong>期望值必須是正的。</strong></p>
+                    <p>當你的期望值是正的，你才敢多交易、敢放大、敢把交易當成「可重複執行的生意」。</p>
+                </div>
+
+                <div id="section-2">
+                    <h3>二、交易其實沒那麼神：你跟大戶的距離，多半不是秘笈，是「邏輯＋經驗＋轉換能力」</h3>
+                    <p>很多人把交易想得太複雜、太神秘，覺得好像要什麼武功秘笈。</p>
+                    <p>但我認識很多靠交易賺到上億元的人，他們有什麼「絕世祕法」嗎？沒有。他們設備有多神嗎？也沒有。</p>
+                    <p>你跟大戶的距離，通常只是三件事：<strong>第一是經驗，第二是邏輯，第三是把經驗跟邏輯「轉換成策略」的能力。</strong></p>
+                    <p>市場每天都在提供你一堆資訊：歷史資料、歷史現象、新聞、公開數據。差別只是——你有沒有把它變成「可執行的策略」。</p>
+                </div>
+
+                <div id="section-3">
+                    <h3>三、策略怎麼找？把大家每天聽到的「新聞廢話」變成「可賺錢的流程」</h3>
+                    <p>我用幾個例子讓你感受這件事。</p>
+                    
+                    <h4>例子 1：新春行情（你每天都聽過，但你有把它變策略嗎？）</h4>
+                    <p>二月快到時，新聞一定會講「新春開紅盤」、「過去十年統計勝率」。多數人聽完就算了。</p>
+                    <p>但如果你要做成策略，最簡單的第一層思維是：<strong>過年前買、過年後賣，賺新春行情。</strong></p>
+                    <p>接著第二層，你會開始問：我要買大型股還是小型股？權值還是題材？高價還低價？要不要篩出「二月勝率最高」的族群？</p>
+                    <p>你不會量化沒關係。你手機自選股有四、五十檔吧？把每一檔「過年前後」十年的線圖翻出來看，一個小時就看得完。你就能統計出：你關注的股票裡，哪些在過年前後特別容易走強，哪些反而容易整理或回檔。</p>
+                    <p>這就是把「大家都知道的話」變成「你能做的策略」。</p>
+                    <p>同理，什麼 520 行情、年底作帳行情，本質都一樣：你要做的是「架構」，不是「聽完就算」。</p>
+
+                    <h4>例子 2：融資大減（別只吃瓜，要把它變成進出場條件）</h4>
+                    <p>融資大減大家也很愛看，看到就說「散戶斷頭了」。但你可以往下想兩層：</p>
+                    <ul>
+                        <li><strong>第一層：</strong>融資減幅排行榜前 10 名，是不是可能的觀察名單？</li>
+                        <li><strong>第二層：</strong>你不可能「只要融資大減就買」，那你要加條件——例如融資維持率低於某個水位（像 130%）才進場，避免你買在下跌初期。</li>
+                    </ul>
+                    <p>你一樣不需要寫什麼高深程式，先從自選股做回看，把它變成你自己的「交易規則雛形」。</p>
+
+                    <h4>例子 3：成交量破紀錄（市場給你題目，你要自己寫答案）</h4>
+                    <p>最近我有發文談「券商成交量」。當市場出現史上罕見的大量（例如連續幾天都在極高水位），多數人只會說：「哇，好熱，好猛。」</p>
+                    <p>但你要問的是：<strong>這怎麼賺？</strong></p>
+                    <p>我的思考是：成交量暴增，最直接受惠的是誰？券商。</p>
+                    <p>券商股通常沒有「成交量暴增」的利空，只有利多；最差情況是市場沒反應，我就認賠出場；但如果市場開始聯想「量能高檔常態化」，券商股就有機會被重估。</p>
+                    <p>我想說的是：你真正能賺錢的東西，其實很多你都「早就知道」，只是你沒有把它當成策略去看、去驗證、去執行。</p>
+                </div>
+
+                <div id="section-4">
+                    <h3>四、交易的本質：供需不平衡（把它當成做生意，你會突然變聰明）</h3>
+                    <p>交易最核心的東西就是：<strong>供給與需求的不平衡。</strong></p>
+                    <p>你做生意會去找「供過於求」的地方嗎？不會。你會找「需求很強、供給跟不上」的地方，因為那裡才容易賺錢。</p>
+                    <p>用生活例子你一定懂：台風來前你看得到，台風過後蔬菜供給下降、價格容易漲。這就是供需不平衡。</p>
+                    <p>套回股票也一樣。像記憶體這種產業，一旦供給端改變（產能轉移、產品結構調整），而需求端被 AI server 拉動，就會形成不對等。你只要抓到「供需失衡」這個點，你就已經拿到一把勝率不一樣的鑰匙。</p>
+                    <p>更進一步，研究要做在新聞之前：你不能等到「正式發布台風警報」才開始想交易策略；你要在它還在太平洋、甚至還不確定會不會登陸時，就先設計好：</p>
+                    <ul>
+                        <li>如果沒來，我怎麼保命？</li>
+                        <li>如果來而且很強，我怎麼放大？</li>
+                    </ul>
+                    <p>這就是風險報酬比的來源。</p>
+                </div>
+
+                <div id="section-5">
+                    <h3>五、短線越短，越不要用技術分析硬解釋（用基本觸發事件才抓得到）</h3>
+                    <p>我舉一個記憶體報價的案例：<br>當某些關鍵現貨報價原本連續多天大漲，市場氣氛非常熱，但某一天「增幅突然大幅趨緩」，即使只是從每天 3–4% 變成接近持平，市場的情緒也可能瞬間翻轉，股價出現很劇烈的反應。</p>
+                    <p>你如果硬要用技術分析解釋，當然也可以說什麼「跌破均價線、轉空、支撐反彈」。但那都只是後見之明的故事。真正驅動的是：<strong>資訊觸發事件（報價變化）改變了供需預期。</strong></p>
+                    <p>所以我要你們放下一個執念：<br>不要覺得一條均線、一個指標，就能「無腦爆賺」。市場上很多課程跟軟體喜歡用這種口號，因為大家都想簡單、想省力。但你如果想長期活下來，越短線越要抓「真因」，不是抓「漂亮解釋」。</p>
+                    <p>一句話：放下 K 線執著，是你進步的關鍵。</p>
+                </div>
+
+                <div id="section-6">
+                    <h3>六、心態與部位：勝率的上限有限，風險報酬比才是你能拉開差距的地方</h3>
+                    <p>很多人一生都在追勝率。但我先講結論：<br><strong>勝率的提升是有限的，風險報酬比的提升是無限的。</strong></p>
+                    <p>假設你勝率從 50% 拉到 55%，你可能要花很多年。你再怎麼強，勝率要到 70%、80% 都很難，而且成本很高。</p>
+                    <p>但風險報酬比不一樣：你可以做到「賠一百萬、賺一億」，這才是交易真正的放大器。期望值就是勝率與風報比的乘積，你只追勝率會很痛苦，因為你永遠會遇到不確定。</p>
+                </div>
+
+                <div id="section-7">
+                    <h3>七、大部位不是靠膽子，是靠流程：小部位試錯，感覺對才加碼</h3>
+                    <p>很多人好奇我怎麼放大部位。我說白一點：不是我心臟比較大顆，是我有方法讓自己「只在對的時候大」。</p>
+                    <p>你一定有這種經驗：下單後覺得不對、後悔、覺得太早、覺得怪怪的。</p>
+                    <p>我要問你：這種感覺，小部位也會出現；大部位也會出現。差別只是——大部位會痛到你變形。</p>
+                    <p>所以我的做法是：</p>
+                    <blockquote>
+                        當你不確定，就用小部位進場「換感覺」。<br>
+                        感覺不對，停損不痛，你就敢嘗試很多次；你嘗試夠多次，才有機會遇到「感覺真的對、很有把握」的時刻。<br>
+                        那個時刻你才加碼。
+                    </blockquote>
+                    <p>這就是「大賺小賠」真正能落地的方式：你把錢花在「高把握的時候」，而不是花在「每一次嘗試」上。</p>
+                </div>
+
+                <div id="section-8">
+                    <h3>八、你為什麼「小部位沒感覺」？因為你沒有把小錢當錢</h3>
+                    <p>很多人說：我用一張試單沒感覺。<br>我直白講：因為你根本沒把這些小錢當錢。</p>
+                    <p>月薪三萬時，一餐 300 會心痛；月薪三百萬時，一樣 300 你就沒感覺。不是食物變了，是你心態變了。</p>
+                    <p>交易也是：你不把小額虧損當成「真的虧損」，你就學不到市場給你的反饋。</p>
+                    <p>訓練方式很簡單但很反人性：<strong>賠錢的感覺放大、賺錢的感覺縮小。</strong></p>
+                    <p>你能把「賠 300 元」當成很痛苦，你就會更謹慎；你能把「賺 100 萬」當成平常心，你就不會得意忘形，反而更能冷靜加碼、持有、讓趨勢把你帶走。</p>
+                </div>
+
+                <div id="section-9">
+                    <h3>九、同一個行情兩種解讀：你看到的強弱，常常不是行情，是你的部位、槓桿與心理在作祟</h3>
+                    <p>我最後講一個很多人會踩的坑：同一張走勢圖、同一個拉回點，不同的人會有完全相反的解讀。</p>
+                    <ul>
+                        <li>你早就買在低點、一路抱上來，你看到拉回會覺得「轉弱，該走了」。</li>
+                        <li>你一路沒上車，你看到拉回會覺得「終於給我買點」。</li>
+                        <li>你追高買在上面，你看到拉回會覺得「再加碼攤平」。</li>
+                    </ul>
+                    <p>同一個行情，四種解讀。問題在哪？<br>通常不是行情，是你自己的：資金、槓桿、部位、心理。</p>
+                    <p>所以我盤中幾乎不看自己的浮動損益、也不盯著成本。我只看行情本身。因為「要不要進出」跟「你現在賺或賠」沒有任何關係。你如果能解開這個結，你會開始看到市場更真實的樣貌。</p>
+                </div>
+
+                <div id="section-10">
+                    <h3>十、結尾：撐住你的不是意志力，是你真的喜歡這件事</h3>
+                    <p>送給還在路上的人一句話：<br>有時候撐著你的不是毅力，也不是努力，而是一份單純的喜愛。</p>
+                    <p>我見過真正成功的交易者都有共通點：他們熱愛交易，享受研究，享受市場帶來的刺激與成長。對他們來說那不是壓力，而是一種快樂。</p>
+                </div>
+            </section>
+
+            <section id="part2">
+                <h2>第二部分：下半場 - Joeman vs 巨人傑 對談與實戰觀點</h2>
+
+                <div id="intro-2">
+                    <h3>前言</h3>
+                    <p>下半場，Joeman vs 巨人傑 對談。<br>因為開頭部分有點先閒聊沒錄到，後續才逐漸加溫市場話題，部份有卡到，提供有節錄到的內容部份。</p>
+                </div>
+
+                <div id="part2-1">
+                    <h3>一、台積電與持倉心法：分批進場與心理壓力</h3>
+                    <p><strong>Joeman：</strong><br>今天我們聊一個大家最容易「被它影響、卻又最難好好處理」的股票：台積電。</p>
+                    <p><strong>傑：</strong><br>你以前有說過「股價腰斬也不奇怪」，但我看你那時候進場其實是很有把握的，對吧？</p>
+                    <p>有把握也不代表要一次把部位打滿。比較好的做法是分批進、邊走邊加碼：你的信心越來越強，再慢慢加。這樣第一個，你的感受會舒服很多；第二個，如果方向錯了，你砍掉也不會心痛。</p>
+                    <p><strong>Joeman：</strong><br>你說「不心痛」這點很關鍵。很多人真正卡住的，是砍不掉。</p>
+                    <p><strong>傑：</strong><br>對，砍不掉通常不是技術問題，是三個壓力疊在一起：心理壓力、槓桿壓力、資金壓力。你承受不起虧損，所以你不敢砍；你不敢砍，就更難停損；越拖越大，最後不是輸在判斷，是輸在承受力。</p>
+                    <p>你要先問自己：這個部位是不是造成我很大的心力負荷？如果它只是一張，你會不會睡得著？如果答案是「會」，那問題不是股票，是你部位下太大。</p>
+                    <p><strong>Joeman：</strong><br>所以你很常建議用「一張」開始練？</p>
+                    <p><strong>傑：</strong><br>因為你用一張，你才練得到「停損」跟「評估」。很多人說要訓練判斷準度，我第一個反問：你現在怎麼下單？</p>
+                    <p>沒把握的人，往往一開始下的部位比我還大。你一開始就把自己逼到不能錯，那你怎麼可能練出穩定？</p>
+                    <p>而且我一直強調：所有交易手法，都建立在「那四個問題」先解決（心理／槓桿／資金／部位）之後，後面談策略、看法、方向判斷才有意義。</p>
+                </div>
+
+                <div id="part2-2">
+                    <h3>二、關於「判斷的感覺」與「停損速度」</h3>
+                    <p><strong>Joeman：</strong><br>你提到「判斷那個贏跟輸的感覺」，那是多年累積出來的嗎？</p>
+                    <p><strong>傑：</strong><br>你可以這樣理解：如果你賠 100 萬會覺得人生要出事，你就會被迫把停損練得很好；但如果你賠 100 塊沒感覺，你根本不會認真檢討。痛感會逼你進步。</p>
+                    <p>我自己試單時也一樣，進去如果覺得不對，下一秒就出場。我可以放大做，是因為我的風控底線很嚴苛。短線交易尤其如此：你要的是「錯了立刻退」，不是跟市場爭輸贏。</p>
+                    <p>但如果是波段或偏產業長線，我也是分批投入：先看好方向，確認基本面與關鍵假設，再逐步加碼，不會一次 all-in。</p>
+                </div>
+
+                <div id="part2-3">
+                    <h3>三、當沖到底是不是「妖魔化」？</h3>
+                    <p><strong>Joeman：</strong><br>你現在資金量體很大，還做當沖嗎？</p>
+                    <p><strong>傑：</strong><br>這五年我幾乎不做當沖了，但我必須說清楚：當沖不是妖魔，它可以賺錢，而且我前面五年到十年的身價，很多就是靠高週轉率累積出來的。</p>
+                    <p>為什麼這個觀念重要？因為如果你本金很小，就算你一年報酬率 50%，也未必能支撐生活。你想在早期把資產做大，週轉率就是工具。但前提只有一個：<strong>風險報酬比要控好。</strong></p>
+                    <p>你不能用「賠 1%／賺 2%」這種很薄的風報比去做當沖；你要做到的是——錯了小賠、對的時候敢加大、讓整體期望值站在你這邊。</p>
+                </div>
+
+                <div id="part2-4">
+                    <h3>四、遇到極端行情怎麼辦（以 2025 年 4 月關稅股災為例）</h3>
+                    <p><strong>Joeman：</strong><br>像 2025 年 4 月那波關稅股災，你怎麼處理？心態怎麼調？</p>
+                    <p><strong>傑：</strong><br>我平常槓桿控得很嚴，通常就 1.x 倍而已，所以遇到極端行情，我第一秒做的事情是把槓桿降到 1 倍，等於不開槓桿。槓桿一拿掉，你情緒就會穩很多。</p>
+                    <p>第二個，我平常就把資產流動性準備好（例如可快速變現的配置像是房產、必要時能調度的資金）。這樣遇到大波動，你才有能力做「冷靜的判斷」，甚至把它當成買點。</p>
+                    <p>所以那段時間對我來說不是比誰看得準，而是比誰活得久。你只要沒被槓桿打死、部位沒被迫砍，後面行情反彈自然會把績效帶起來。</p>
+                </div>
+
+                <div id="part2-5">
+                    <h3>五、台積電與市場「流動性」的差別</h3>
+                    <p><strong>Joeman：</strong><br>你以前說台積電上 1000、指數上 2 萬，市場會更好做；現在台積電接近 1700、指數接近 3 萬，是不是更好做？</p>
+                    <p><strong>傑：</strong><br>更好做的原因不是「更會漲」，而是流動性更好。十年前一天成交量五、六百億，甚至三、四百億，進出大部位會有流動性風險；現在動輒七、八千億，你進出部位的流動性風險顯著下降，風控更好做。</p>
+                </div>
+
+                <div id="part2-6">
+                    <h3>六、2026 年產業觀點主軸（能源 × AI 的供需缺口）</h3>
+                    <p><strong>Joeman：</strong><br>那你看 2026 年比較看好的產業是什麼？</p>
+                    <p><strong>傑：</strong><br>我比較看能源。AI、晶片的需求是指數型成長，但能源很多還都是線性成長，能源很符合上半場講的供需報酬和供需不對等的這件事情。未來卡住的可能不是 GPU、CPU、記憶體，因為這些可以靠擴廠解決，2年缺、3年缺，3年之後不缺，而能源需求是持續的往上。AI發展指數型成長，能源需求也是指數型。</p>
+                    <p>我在 2023 年就意識到：ChatGPT引爆AI浪潮，電力需求會被重新定價。各國能源政策開始轉向更務實（不管核能、火力、天然氣、甚至小型核反應爐 SMR），因為可再生能源不是不好，是速度跟不上。（這有提到2023年郭台銘初選有提到每個縣市應有一個核反應爐，當時全世界有沒什麼人在提小型核反應爐）</p>
+                    <p><strong>傑：</strong><br>我當時10月研究國外有無相關概念股，找到一間「SMR 小型核反應爐概念公司」（Oklo），董事是OpenAI 的 Sam Altman。那時市場幾乎沒人討論，我用很長時間慢慢收，因為我押的是「能源議題遲早被市場正視」。</p>
+                    <p>但後來我又想：SMR 就算最快商轉也要等幾年（2028），這3年的中間的電力缺口誰補？後來我去拜訪懂基礎設施的劉總經理，後來找到一種「可在短期快速部署、就地供電」快速滿足的解法（BloomEnergy，以下先稱 B 公司，那時BE股價約$20）。</p>
+                    <p>我把原本在 SMR 概念上的獲利，全部轉去BE。</p>
+                    <p>（Oklo與BE差異，Oklo是簽意向書MOU：開始商轉再跟你買/ BE則是真的營收，真的是實質訂單，所以把意向書轉向實質訂單股）</p>
+                    <p><strong>Joeman：</strong><br>你的意思是：同一個題目（能源），你把它拆成「長線（SMR）」跟「短線（先補缺口的供電方案）」？</p>
+                    <p><strong>傑：</strong><br>對，但我也提醒：這些不是永遠的。等 SMR 真商轉、電力成本下降，B 公司可能變成替補能源；再更遠一點，如果核融合真的突破（2030年才有機會商轉），資金會再重新定價。重點不是死抱某家公司，而是盯著「供需缺口」與「解法的替代順序」。</p>
+                    <p>（另也有分享Helion Energy這間公司=>沒錯Sam Altman又有在裡面）</p>
+                </div>
+
+                <div id="part2-7">
+                    <h3>七、人生追求：成立兒童基金會</h3>
+                    <p><strong>Joeman：</strong><br>你現在身價很高了，那人生追求是什麼？</p>
+                    <p><strong>傑：</strong><br>我物欲很低，錢多到某個程度，會開始思考「賺錢的意義」。我很喜歡小朋友，預期兩年內會成立兒童相關基金會。我的想法是用企業化方式經營：該給專業社工合理待遇、讓有能力有熱情的人留下來，把資源真正用在孩子身上。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
